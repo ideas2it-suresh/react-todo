@@ -1,0 +1,32 @@
+header {
+  background-color: transparent;
+  box-shadow: 0 4px 15px -6px $box-shadow-color;
+  color: $header-font-color;
+  font-family: $font-family;
+  font-size: 12px;
+  height: 60px;
+  text-align: center;
+  -webkit-box-shadow: 0 4px 15px -6px $box-shadow-color;
+  -moz-box-shadow: 0 4px 15px -6px $box-shadow-color;
+  .head-container {
+    display: flex;
+    width: 100%;
+  }
+  .head-logo {
+    display: inline;
+    padding-top: 5px;
+    width: 10%;
+    img {
+      max-height: 30px;
+      max-width: 150px;
+    }
+  }
+  .head-content {
+    padding: 10px;
+    width: 90%;
+  }
+  h1 {
+    margin: 0;
+    padding-top: 5px;
+  }
+}

@@ -1,0 +1,181 @@
+@import 'helpers/_variables.scss';
+@import 'layout/_header.scss';
+@import 'layout/_leftSidePanel.scss';
+@import 'layout/_footer.scss';
+
+body {
+  background-color: $background-color;
+  color: $font-color;
+  font-family: $font-family;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  font-size: 14px;
+  height: 100%;
+  margin-top: 1px;
+  min-height: 94vh;
+  width: 100%;
+  ::placeholder {
+    text-align: center;
+  }
+}
+
+.task-content-div {
+  height: 92vh;
+  overflow: auto;
+
+  .task-list-group {
+    position: relative;
+  }
+
+  span {
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+
+    i {
+      padding-right: 10px;
+    }
+  }
+}
+
+.category-content-div {
+  height: 78vh;
+  overflow: auto;
+}
+
+.todo-list {
+  background-color: $task-bg-color;
+  display: block;
+  margin: 0;
+  width: 65%;
+
+  .add-task-div {
+    background-color: $task-add-input-color;
+    border-radius: 5px;
+    margin-left: 25px;
+    margin-top: 10px;
+    opacity: 0.7;
+    width: 96%;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding-left: 15px;
+    width: 96%;
+  }
+
+  .task-list {
+    background-color: $white-color;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-left: 25px;
+    padding-left: 16px;
+    width: 95%;
+    &:focus,
+    &:hover {
+      background-color: $hover-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  .active-task {
+    background-color: $hover-color;
+  }
+
+  .task-name {
+    display: block;
+    padding: 15px;
+  }
+
+  .strike-text {
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
+}
+
+.todo-full-list {
+  @extend .todo-list;
+  width: 85%;
+}
+
+.comment-panel {
+  background-color: $white-color;
+  display: block;
+  margin: 0;
+  position: relative;
+  width: 20%;
+
+  .form-input {
+    background-color: $input-bg-color;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    outline: none;
+    padding-left: 15px;
+    width: 91%;
+  }
+
+  .task-detail {
+    background-color: $comment-sec-bg-color;
+
+    input {
+      @extend .form-input;
+      height: 40px;
+    }
+
+    textarea {
+      @extend .form-input;
+      height: 100px;
+      resize: none;
+    }
+  }
+
+  .comment-section {
+    background-color: $comment-sec-bg-color;
+    margin: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    input {
+      @extend .form-input;
+      height: 40px;
+      line-height: 40px;
+      resize: none;
+    }
+  }
+
+  .comment-list {
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    height: 66vh;
+    margin-top: 20px;
+    overflow: auto;
+  }
+
+  .comment {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+    padding: 20px;
+
+    .comment-date-span {
+      float: right;
+      padding-top: 2px;
+    }
+  }
+}
